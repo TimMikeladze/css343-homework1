@@ -1,27 +1,23 @@
 public class Problem5 {
-
-    public static void main(final String[] args) {
-        System.out.println(problem5(new int[] { -5, -1, 0, 1, 3, 6, 9, 10, 12, 13, 18, 27, 30 }, 24));
-    }
-
-    private static boolean problem5(final int[] input, final int k) {
-        boolean found = false;
-        int a = 0;
-        int b = input.length - 1;
-        for (int i = 0; i < input.length; i++) {
-            int sum = input[a] + input[b];
-            if (sum == k) {
-                found = true;
-                break;
-            }
-            else if (sum < k) {
-                a++;
-            }
-            else if (sum > k) {
-                b--;
-            }
-        }
-        return found;
-    }
-
+	
+	public static boolean problem5(int[] input, int k) {
+		boolean found = false;							// 1 unit
+		int a = 0;										// 1 unit
+		int b = input.length - 1;						// 2 unit
+		for (int i = 0; i < input.length; i++) {		// 1 + (n+1) + n units
+			int sum = input[a] + input[b];				// 1 unit
+			if (sum == k) {								// 1 unit
+				found = true;							// 1 unit
+				break;
+			}
+			else if (sum < k) {							// 1 unit
+				a++;									// 1 unit
+			}
+			else if (sum > k) {							// 1 unit
+				b--;									// 1 unit
+			}
+		}
+		return found;									// 1 unit
+	}
+	
 }
